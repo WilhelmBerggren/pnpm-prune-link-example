@@ -2,6 +2,8 @@
 
 This repo describes an issue where a "link:" dependency is not properly handled after using "deploy --legacy". This issue represents how Prisma wants you to use it when using its new [Driver adapters and custom output paths](https://www.prisma.io/docs/orm/overview/databases/database-drivers#driver-adapters-and-custom-output-paths).
 
+[pnpm/pnpm issue 9575](https://github.com/pnpm/pnpm/issues/9575)
+
 ## Project structure:
 - "a" and "b" exist in the workspace.
 - "c" is located in "a", but not in the workspace.
