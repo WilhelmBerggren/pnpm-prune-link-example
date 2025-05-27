@@ -1,0 +1,7 @@
+{
+  "name": "a",
+  "main": "./index.mjs",
+  "dependencies": {
+    "c": "link:./c"
+  }
+}
