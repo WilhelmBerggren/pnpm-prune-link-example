@@ -1,14 +1,20 @@
 # PNPM Prune + Link issue example
 
-This repo describes an issue where a "link:" dependency is not properly handled after using "deploy --legacy"
+This repo describes an issue where a "link:" dependency is not properly handled after using "deploy --legacy". This issue represents how Prisma wants you to use it when using its new [Driver adapters and custom output paths](https://www.prisma.io/docs/orm/overview/databases/database-drivers#driver-adapters-and-custom-output-paths).
 
-How to use:
+## Project structure:
+- "a" and "b" exist in the workspace.
+- "c" is located in "a", but not in the workspace.
+- "c" is linked to "a" via "link:./c", and used in "a".
+- "b" has "a" as a dependency, and should be able to call its exported function.
+
+## How to use
 ```sh
 pnpm --filter b deploy --legacy ./pruned
 node ./pruned/main.mjs
 ```
 
-Error:
+## Error
 ```sh
 node:internal/modules/esm/resolve:857
   throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
